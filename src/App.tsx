@@ -1,8 +1,6 @@
 import { useState } from "react";
 import { IMENU } from "./types";
 import { menuData } from "./data";
-
-import "./App.css";
 import Categories from "./components/Categories";
 import Menu from "./components/Menu";
 
