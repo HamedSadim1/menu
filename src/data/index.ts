@@ -1,5 +1,23 @@
 import { IMENU } from "../types";
 
+/**
+ * Static sample menu data used by the application.
+ *
+ * An array of IMENU items that serves as seed/sample data for the menu UI.
+ *
+ * Each item includes:
+ * - id: number — unique identifier for the menu item.
+ * - title: string — human-readable name of the item.
+ * - category: string — item category (e.g. "breakfast", "lunch", "shakes").
+ * - price: number — numeric price value for the item.
+ * - img: string — relative path to the item's image asset.
+ * - desc: string — short descriptive text for the item.
+ *
+ * Intended use:
+ * - Populate lists/grids of menu items in the UI.
+ * - Drive category filtering and example interactions during development.
+ * - Provide easily editable sample content for demos and tests.
+ */
 export const menuData: IMENU[] = [
   {
     id: 1,
