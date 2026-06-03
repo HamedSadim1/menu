@@ -9,11 +9,13 @@ import { Categories, Menu, MenuTitle } from "./components";
  */
 function App() {
   const [menuItems, setMenuItems] = useState<MenuItem[]>(menuData);
+  const [activeCategory, setActiveCategory] = useState<string>(CATEGORY_ALL);
 
   /**
    * Filters the menu items based on the selected category.
    */
   const filterItem = (category: string) => {
+    setActiveCategory(category);
     if (category === CATEGORY_ALL) {
       setMenuItems(menuData);
       return;
@@ -25,7 +27,11 @@ function App() {
     <main>
       <section className="menu section">
         <MenuTitle />
-        <Categories categories={categories} filterItem={filterItem} />
+        <Categories
+          categories={categories}
+          filterItem={filterItem}
+          activeCategory={activeCategory}
+        />
         <Menu items={menuItems} />
       </section>
     </main>

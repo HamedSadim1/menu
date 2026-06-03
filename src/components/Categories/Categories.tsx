@@ -4,19 +4,20 @@
 export interface CategoriesProps {
   filterItem: (category: string) => void;
   categories: string[];
+  activeCategory: string;
 }
 
 /**
- * Renders a list of categories as buttons.
+ * Renders a list of categories as buttons with active state.
  */
-const Categories = ({ filterItem, categories }: CategoriesProps) => {
+const Categories = ({ filterItem, categories, activeCategory }: CategoriesProps) => {
   return (
     <div className="btn-container">
       {categories.map((category) => {
         return (
           <button
             key={category}
-            className="filter-btn"
+            className={`filter-btn ${category === activeCategory ? "active" : ""}`}
             onClick={() => filterItem(category)}
           >
             {category}

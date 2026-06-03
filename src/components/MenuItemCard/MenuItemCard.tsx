@@ -8,17 +8,20 @@ export interface MenuItemCardProps {
 }
 
 /**
- * Renders a single menu item card with image, title, price, and description.
+ * Renders a single menu item card with image, title, price, category badge, and description.
  */
 const MenuItemCard = ({ item }: MenuItemCardProps) => {
-  const { title, img, desc, price } = item;
+  const { title, img, desc, price, category } = item;
   return (
     <article className="menu-item">
-      <img src={img} alt={title} className="photo" />
+      <div className="photo-wrapper">
+        <img src={img} alt={title} className="photo" />
+        <span className="category-badge">{category}</span>
+      </div>
       <div className="item-info">
         <header>
           <h4>{title}</h4>
-          <h4 className="price">${price}</h4>
+          <h4 className="price">${price.toFixed(2)}</h4>
         </header>
         <p className="item-text">{desc}</p>
       </div>
